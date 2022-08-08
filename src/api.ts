@@ -38,6 +38,6 @@ export const readOnlyContractCall = (options: ContractCallOptions) => {
 
 
 export const getAccountBalance = (network: StacksNetwork, address: string, blockTip: string) => {
-    const u = `${network.coreApiUrl}/v2/accounts/${address}?tip=${blockTip}`;
+    const u = `${network.coreApiUrl}/v2/accounts/${address}?proof=0&tip=${blockTip}`;
     return axios.get(u, baseConfig).then(r => cvToValue(hexToCV(r.data.balance)));
 }
