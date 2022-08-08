@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
     "clean": "rimraf coverage build tmp",
-    "test": "cross-env NODE_ENV=test jest --rootDir=./src/ --verbose=false"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=20000 --rootDir=./src/ --verbose=false"
   },
   "jest": {
     "preset": "ts-jest",

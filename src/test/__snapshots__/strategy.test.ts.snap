@@ -6,4 +6,12 @@ exports[`Strategy test Tests: sip-010-get-balance-SP2N7SK0W83NJSZHFH8HH31ZT3DXJG
 
 exports[`Strategy test Tests: sip-010-get-balance-SP2VWSP59FEVDXXYGGWYG90M3N67ZST2AGQK6Q5RY 1`] = `0`;
 
-exports[`Strategy test Tests: sip-010-get-balance-SP3XD84X3PE79SHJAZCDW1V5E9EA8JSKRBPEKAEK7 1`] = `2.2866`;
+exports[`Strategy test Tests: sip-010-get-balance-SP3XD84X3PE79SHJAZCDW1V5E9EA8JSKRBPEKAEK7 1`] = `2.7972`;
+
+exports[`Strategy test Tests: stx-balance-SP2DXHX9Q844EBT80DYJXFWXJKCJ5FFAX50CQQAWN 1`] = `1.7666`;
+
+exports[`Strategy test Tests: stx-balance-SP2N7SK0W83NJSZHFH8HH31ZT3DXJG7NFE5VYT9SJ 1`] = `0.1142`;
+
+exports[`Strategy test Tests: stx-balance-SP2VWSP59FEVDXXYGGWYG90M3N67ZST2AGQK6Q5RY 1`] = `0`;
+
+exports[`Strategy test Tests: stx-balance-SP3XD84X3PE79SHJAZCDW1V5E9EA8JSKRBPEKAEK7 1`] = `1081.7753`;

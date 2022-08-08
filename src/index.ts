@@ -1,9 +1,11 @@
 import {StacksNetwork} from '@stacks/network';
 import * as sip10GetBalance from './sip-010-get-balance';
+import * as stxBalance from './stx-balance';
 import {STRATEGY} from './types';
 
 const strategies: Record<string, STRATEGY> = {
-    'sip-010-get-balance': sip10GetBalance
+    'sip-010-get-balance': sip10GetBalance,
+    'stx-balance': stxBalance
 }
 
 export const runStrategy = (strategy: string, network: StacksNetwork, address: string, blockTip: string, options: any) => {
