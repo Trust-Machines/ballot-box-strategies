@@ -22,7 +22,7 @@ export const schema: Schema = {
     decimals: {
         type: 'number',
         title: 'Decimals',
-        example: 'e.g. 18',
+        example: 'e.g. 6',
         min: 0,
         max: 20
     }

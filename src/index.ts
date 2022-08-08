@@ -1,4 +1,4 @@
-import * as sip10GetBalance from './sip-10-get-balance';
+import * as sip10GetBalance from './sip-010-get-balance';
 import {NETWORK, STRATEGY} from './types';
 import {NETWORKS} from './constants';
 
