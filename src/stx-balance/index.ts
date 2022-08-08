@@ -9,7 +9,7 @@ export const schema: Schema = {}
 
 export const test: TestConfig = {
     network: 'mainnet',
-    blockTip: '0xbdd1aeeb13dde4ee791be3a8221549b75e248aedbc8df467fee5d84322f3dbf8',
+    blockTip: '0x693fabed45cb877fa05e5dadb5eb758433a1d653953470072934944284bac408',
     options: {},
     addresses: [
         'SP3XD84X3PE79SHJAZCDW1V5E9EA8JSKRBPEKAEK7',
