@@ -1,14 +1,15 @@
 import strategies, {runStrategy} from '../index';
 import {getNetworkByName} from './helper';
+import {testConfig} from '../stx-balance';
 
 describe('Strategy test', () => {
     it('Tests', async () => {
         for (let s of Object.keys(strategies)) {
             const strategy = strategies[s];
-            const {test} = strategy;
+            const {testConfig} = strategy;
 
-            for (let address of test.addresses) {
-                const resp = await runStrategy(s, getNetworkByName(test.network), address, test.blockTip, test.options);
+            for (let address of testConfig.addresses) {
+                const resp = await runStrategy(s, getNetworkByName(testConfig.network), address, testConfig.blockTip, testConfig.options);
                 expect(resp).toMatchSnapshot(`${s}-${address}`);
             }
         }

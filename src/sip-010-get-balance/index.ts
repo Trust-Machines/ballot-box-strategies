@@ -28,7 +28,7 @@ export const schema: Schema = {
     }
 }
 
-export const test: TestConfig = {
+export const testConfig: TestConfig = {
     network: 'mainnet',
     blockTip: '693fabed45cb877fa05e5dadb5eb758433a1d653953470072934944284bac408',
     options: {

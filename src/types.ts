@@ -1,4 +1,5 @@
 import {StacksNetwork} from '@stacks/network';
+import {testConfig} from './stx-balance';
 
 export type NETWORK = 'mainnet' | 'testnet';
 
@@ -30,7 +31,7 @@ export interface Strategy {
     name: string,
     schema: Schema,
     strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>,
-    test: TestConfig
+    testConfig: TestConfig
 }
 
 export interface TestConfig {
