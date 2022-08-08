@@ -1,5 +1,7 @@
 import {StacksNetwork} from '@stacks/network';
 
+export type NETWORK = 'mainnet' | 'testnet';
+
 interface SchemaEntryBase {
     title: string,
     example: string,
@@ -27,7 +29,15 @@ export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | Sche
 export interface STRATEGY {
     name: string,
     schema: Schema,
-    strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>
+    strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>,
+    test: TestConfig
+}
+
+export interface TestConfig {
+    network: NETWORK,
+    blockTip: string,
+    options: any,
+    addresses: string[]
 }
 
 export interface ContractCallOptions {

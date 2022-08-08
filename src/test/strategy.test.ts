@@ -1,16 +1,16 @@
-import {runStrategy} from '../index';
-import {StacksMainnet} from '@stacks/network';
+import strategies, {runStrategy} from '../index';
+import {getNetworkByName} from './helper';
 
 describe('Strategy test', () => {
-    const network = new StacksMainnet();
+    it('Tests', async () => {
+        for (let s of Object.keys(strategies)) {
+            const strategy = strategies[s];
+            const {test} = strategy;
 
-    it('sip-010-get-balance', async () => {
-        const res = await runStrategy('sip-010-get-balance', network, 'SP3XD84X3PE79SHJAZCDW1V5E9EA8JSKRBPEKAEK7', 'latest', {
-            symbol: 'USDA',
-            address: 'SP2C2YFP12AJZB4MABJBAJ55XECVS7E4PMMZ89YZR.usda-token',
-            decimals: 6
-        });
-
-        expect(typeof res).toEqual('number');
-    })
+            for (let address of test.addresses) {
+                const resp = await runStrategy(s, getNetworkByName(test.network), address, test.blockTip, test.options);
+                expect(resp).toMatchSnapshot(`${s}-${address}`);
+            }
+        }
+    });
 });
