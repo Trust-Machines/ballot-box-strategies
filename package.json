@@ -1,10 +1,10 @@
 {
   "name": "@trustmachines/ballot-box-strategies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BallotBox Strategies",
   "license": "MIT",
-  "main": "build/lib/index.js",
-  "types": "build/lib/index.d.ts",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
