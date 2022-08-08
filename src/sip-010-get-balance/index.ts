@@ -30,7 +30,7 @@ export const schema: Schema = {
 
 export const test: TestConfig = {
     network: 'mainnet',
-    blockTip: 'string',
+    blockTip: '0x39cbf83a8d9ed3cca8629535483d4367793945bf2aa5042d0300e47f40c875dc',
     options: {
         symbol: 'USDA',
         address: 'SP2C2YFP12AJZB4MABJBAJ55XECVS7E4PMMZ89YZR.usda-token',
