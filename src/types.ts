@@ -1,5 +1,4 @@
 import {StacksNetwork} from '@stacks/network';
-import {testConfig} from './stx-balance';
 
 export type NETWORK = 'mainnet' | 'testnet';
 
@@ -26,19 +25,18 @@ export interface SchemaEntryContract extends SchemaEntryBase {
 
 export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | SchemaEntryContract>;
 
+export interface TestConfig {
+    network: NETWORK,
+    blockTip: string,
+    options: any,
+    addresses: string[]
+}
 
 export interface Strategy {
     name: string,
     schema: Schema,
     strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>,
     testConfig: TestConfig
-}
-
-export interface TestConfig {
-    network: NETWORK,
-    blockTip: string,
-    options: any,
-    addresses: string[]
 }
 
 export interface ContractCallOptions {
