@@ -1,7 +1,5 @@
 import {StacksNetwork} from '@stacks/network';
 
-export type NETWORK = 'mainnet' | 'testnet';
-
 interface SchemaEntryBase {
     title: string,
     example: string,
