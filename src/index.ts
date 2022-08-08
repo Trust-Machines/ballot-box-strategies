@@ -1,9 +1,9 @@
 import {StacksNetwork} from '@stacks/network';
 import * as sip10GetBalance from './sip-010-get-balance';
 import * as stxBalance from './stx-balance';
-import {STRATEGY} from './types';
+import {Strategy} from './types';
 
-const strategies: Record<string, STRATEGY> = {
+const strategies: Record<string, Strategy> = {
     'sip-010-get-balance': sip10GetBalance,
     'stx-balance': stxBalance
 }

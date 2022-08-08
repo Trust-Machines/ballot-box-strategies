@@ -26,7 +26,7 @@ export interface SchemaEntryContract extends SchemaEntryBase {
 export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | SchemaEntryContract>;
 
 
-export interface STRATEGY {
+export interface Strategy {
     name: string,
     schema: Schema,
     strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>,
