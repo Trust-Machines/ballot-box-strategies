@@ -1,8 +1,8 @@
 import {StacksNetwork} from '@stacks/network';
 import {standardPrincipalCV, cvToHex} from '@stacks/transactions';
 import BigNumber from 'bignumber.js';
+import {readOnlyContractCall} from '../api';
 import {Schema, TestConfig} from '../types';
-import {readOnlyContractCall} from '../helper';
 
 export const name = 'sip-010-get-balance';
 
