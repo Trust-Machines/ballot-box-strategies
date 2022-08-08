@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import {getAccountBalance} from '../api';
 import {Schema, TestConfig} from '../types';
 
-export const name = 'stx-balance';
+export const description = 'Stacks token balance';
 
 export const schema: Schema = {}
 

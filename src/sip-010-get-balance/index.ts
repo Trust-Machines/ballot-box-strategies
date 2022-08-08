@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js';
 import {readOnlyContractCall} from '../api';
 import {Schema, TestConfig} from '../types';
 
-export const name = 'sip-010-get-balance';
+export const description = 'SIP-010 token balance';
 
 export const schema: Schema = {
     symbol: {

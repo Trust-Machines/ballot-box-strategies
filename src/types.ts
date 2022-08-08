@@ -33,7 +33,7 @@ export interface TestConfig {
 }
 
 export interface Strategy {
-    name: string,
+    description: string,
     schema: Schema,
     strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>,
     testConfig: TestConfig
