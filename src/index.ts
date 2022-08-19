@@ -13,7 +13,7 @@ const strategies: Record<string, Strategy> = {
 
 export const runStrategy = (strategy: string, network: StacksNetwork, address: string, blockTip: string, options: StrategyOptions) => {
     if (!strategies[strategy]) {
-        throw new Error('Invalid strategy!');
+        throw new Error('Unknown strategy!');
     }
 
     if (!blockTip.trim()) {
