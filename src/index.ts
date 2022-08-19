@@ -1,7 +1,9 @@
 import {StacksNetwork} from '@stacks/network';
+import {Strategy, StrategyOptions} from './types';
+
 import * as sip10GetBalance from './sip-010-get-balance';
 import * as stxBalance from './stx-balance';
-import {Strategy, StrategyOptions} from './types';
+
 export * from './types';
 
 const strategies: Record<string, Strategy> = {
@@ -11,7 +13,11 @@ const strategies: Record<string, Strategy> = {
 
 export const runStrategy = (strategy: string, network: StacksNetwork, address: string, blockTip: string, options: StrategyOptions) => {
     if (!strategies[strategy]) {
-        throw new Error('Unknown strategy!');
+        throw new Error('Invalid strategy!');
+    }
+
+    if (!blockTip.trim()) {
+        throw new Error('Invalid blockTip!');
     }
 
     return strategies[strategy].strategy(network, address, blockTip, options);
