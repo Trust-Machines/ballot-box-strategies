@@ -2,7 +2,7 @@ import {StacksNetwork} from '@stacks/network';
 import {standardPrincipalCV, cvToHex} from '@stacks/transactions';
 import BigNumber from 'bignumber.js';
 import {readOnlyContractCall} from '../api';
-import {Schema, TestConfig} from '../types';
+import {Schema, StrategyOptions, TestConfig} from '../types';
 
 export const description = 'SIP-010 token balance';
 
@@ -44,7 +44,7 @@ export const testConfig: TestConfig = {
     ]
 }
 
-export async function strategy(network: StacksNetwork, address: string, blockTip: string, options: any): Promise<number> {
+export async function strategy(network: StacksNetwork, address: string, blockTip: string, options: StrategyOptions): Promise<number> {
     const resp = await readOnlyContractCall({
         network,
         contract: options.address,

@@ -28,14 +28,20 @@ export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | Sche
 export interface TestConfig {
     network: NETWORK,
     blockTip: string,
-    options: any,
+    options: StrategyOptions,
     addresses: string[]
+}
+
+export interface StrategyOptions {
+    symbol: string,
+
+    [key: string]: any
 }
 
 export interface Strategy {
     description: string,
     schema: Schema,
-    strategy: (network: StacksNetwork, address: string, blockTip: string, options: any) => Promise<number>,
+    strategy: (network: StacksNetwork, address: string, blockTip: string, options: StrategyOptions) => Promise<number>,
     testConfig: TestConfig
 }
 
