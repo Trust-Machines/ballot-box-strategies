@@ -24,7 +24,8 @@ export interface SchemaEntryContract extends SchemaEntryBase {
 }
 
 export interface SchemaEntryHardcoded {
-    hardcoded: any
+    type: 'hardcoded',
+    value: any
 }
 
 export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | SchemaEntryContract | SchemaEntryHardcoded>;

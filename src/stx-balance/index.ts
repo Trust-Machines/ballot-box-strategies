@@ -7,7 +7,8 @@ export const description = 'Stacks token balance';
 
 export const schema: Schema = {
     symbol: {
-        hardcoded: 'STX'
+        type: 'hardcoded',
+        value: 'STX'
     },
 }
 

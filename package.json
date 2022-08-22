@@ -1,6 +1,6 @@
 {
   "name": "@trustmachines/ballot-box-strategies",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "BallotBox Strategies",
   "license": "MIT",
   "main": "build/src/index.js",
