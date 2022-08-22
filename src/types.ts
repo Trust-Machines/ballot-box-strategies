@@ -23,7 +23,11 @@ export interface SchemaEntryContract extends SchemaEntryBase {
     type: 'contract',
 }
 
-export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | SchemaEntryContract>;
+export interface SchemaEntryHardcoded {
+    hardcoded: any
+}
+
+export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | SchemaEntryContract | SchemaEntryHardcoded>;
 
 export interface TestConfig {
     network: NETWORK,

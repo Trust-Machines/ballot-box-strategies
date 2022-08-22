@@ -5,7 +5,11 @@ import {Schema, TestConfig} from '../types';
 
 export const description = 'Stacks token balance';
 
-export const schema: Schema = {}
+export const schema: Schema = {
+    symbol: {
+        hardcoded: 'STX'
+    },
+}
 
 export const testConfig: TestConfig = {
     network: 'mainnet',
