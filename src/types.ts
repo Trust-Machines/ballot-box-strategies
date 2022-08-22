@@ -23,7 +23,7 @@ export interface SchemaEntryContract extends SchemaEntryBase {
     type: 'contract',
 }
 
-export interface SchemaEntryHardcoded {
+export interface SchemaEntryHardcoded extends Omit<SchemaEntryBase, 'example'>{
     type: 'hardcoded',
     value: any
 }
