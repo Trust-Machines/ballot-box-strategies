@@ -1,4 +1,4 @@
-import {StacksMainnet, StacksTestnet} from '@stacks/network';
+import {StacksMainnet, StacksTestnet} from 'micro-stacks/network';
 import {NETWORK} from './types';
 import strategies, {runStrategy} from './index';
 

@@ -1,4 +1,4 @@
-import {StacksNetwork} from '@stacks/network';
+import {StacksNetwork} from 'micro-stacks/network';
 import BigNumber from 'bignumber.js';
 import {getAccountBalance} from '../api';
 import {Schema, TestConfig} from '../types';

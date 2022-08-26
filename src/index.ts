@@ -1,4 +1,4 @@
-import {StacksNetwork} from '@stacks/network';
+import {StacksNetwork} from 'micro-stacks/network';
 import {Strategy, StrategyOptions} from './types';
 
 import * as sip10GetBalance from './sip-010-get-balance';

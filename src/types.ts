@@ -1,4 +1,4 @@
-import {StacksNetwork} from '@stacks/network';
+import {StacksNetwork} from 'micro-stacks/network';
 
 export type NETWORK = 'mainnet' | 'testnet';
 

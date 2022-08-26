@@ -16,10 +16,9 @@
     "testEnvironment": "node"
   },
   "dependencies": {
-    "@stacks/network": "^4.3.4",
-    "@stacks/transactions": "^4.3.4",
     "axios": "^0.27.2",
     "bignumber.js": "^9.0.2",
+    "micro-stacks": "^1.1.2",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
   },

@@ -1,5 +1,5 @@
-import {StacksNetwork} from '@stacks/network';
-import {standardPrincipalCV, cvToHex} from '@stacks/transactions';
+import {StacksNetwork} from 'micro-stacks/network';
+import {standardPrincipalCV, cvToHex} from 'micro-stacks/clarity';
 import BigNumber from 'bignumber.js';
 import {readOnlyContractCall} from '../api';
 import {Schema, StrategyOptions, TestConfig} from '../types';

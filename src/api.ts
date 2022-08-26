@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {StacksNetwork} from '@stacks/network';
-import {cvToJSON, cvToValue, hexToCV} from '@stacks/transactions';
+import {StacksNetwork} from 'micro-stacks/network';
+import {cvToJSON, cvToValue, hexToCV} from 'micro-stacks/clarity';
 import {ContractCallOptions} from './types';
 
 class ContractCallError extends Error {
@@ -22,7 +22,7 @@ const baseConfig = {
 export const readOnlyContractCall = (options: ContractCallOptions) => {
     const {network, contract, method, blockTip, sender, args} = options;
     const [contractAddress, contractName] = contract.split('.');
-    const u = `${network.coreApiUrl}/v2/contracts/call-read/${contractAddress}/${contractName}/${method}?tip=${blockTip}`;
+    const u = `${network.getCoreApiUrl()}/v2/contracts/call-read/${contractAddress}/${contractName}/${method}?tip=${blockTip}`;
 
     return axios.post(u, {
         sender,
@@ -38,6 +38,6 @@ export const readOnlyContractCall = (options: ContractCallOptions) => {
 
 
 export const getAccountBalance = (network: StacksNetwork, address: string, blockTip: string) => {
-    const u = `${network.coreApiUrl}/v2/accounts/${address}?proof=0&tip=${blockTip}`;
+    const u = `${network.getCoreApiUrl()}/v2/accounts/${address}?proof=0&tip=${blockTip}`;
     return axios.get(u, baseConfig).then(r => cvToValue(hexToCV(r.data.balance)));
 }
