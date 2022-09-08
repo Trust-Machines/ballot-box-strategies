@@ -20,7 +20,10 @@ export const runStrategy = (strategy: string, network: StacksNetwork, address: s
         throw new Error('Invalid blockTip!');
     }
 
-    return strategies[strategy].strategy(network, address, blockTip, options);
+    // remove 0x in the beginning
+    const tip = blockTip.replace('0x', '');
+
+    return strategies[strategy].strategy(network, address, tip, options);
 }
 
 export default strategies;
