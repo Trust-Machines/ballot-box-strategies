@@ -1,7 +1,6 @@
-import {StacksNetwork} from '@stacks/network';
 import BigNumber from 'bignumber.js';
 import {getAccountBalance} from '../api';
-import {Schema, TestConfig} from '../types';
+import {Schema, StrategyArgs, TestConfig} from '../types';
 
 export const description = 'Stacks token balance';
 
@@ -15,7 +14,8 @@ export const schema: Schema = {
 
 export const testConfig: TestConfig = {
     network: 'mainnet',
-    blockTip: '693fabed45cb877fa05e5dadb5eb758433a1d653953470072934944284bac408',
+    blockTip: '0x693fabed45cb877fa05e5dadb5eb758433a1d653953470072934944284bac408',
+    blockHeight: 0,
     options: {
         symbol: 'STX'
     },
@@ -27,7 +27,8 @@ export const testConfig: TestConfig = {
     ]
 }
 
-export async function strategy(network: StacksNetwork, address: string, blockTip: string): Promise<number> {
+export async function strategy(args: StrategyArgs): Promise<number> {
+    const {network, address, blockTip} = args;
     const balance = await getAccountBalance(network, address, blockTip);
     const bn = new BigNumber(balance).dividedBy(10 ** 6).toFixed(4, BigNumber.ROUND_FLOOR);
     return parseFloat(bn.toString());
