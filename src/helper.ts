@@ -21,7 +21,13 @@ export const testStrategy = async (s: string) => {
     expect(strategy.schema.symbol === undefined).toEqual(false);
 
     for (let address of testConfig.addresses) {
-        const resp = await runStrategy(s, getNetworkByName(testConfig.network), address, testConfig.blockTip, testConfig.options);
+        const resp = await runStrategy(s, {
+            network: getNetworkByName(testConfig.network),
+            address,
+            blockTip: testConfig.blockTip,
+            blockHeight: testConfig.blockHeight,
+            options: testConfig.options
+        });
         expect(resp).toMatchSnapshot(`${s}-${address}`);
     }
 }

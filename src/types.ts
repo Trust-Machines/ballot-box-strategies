@@ -23,7 +23,7 @@ export interface SchemaEntryContract extends SchemaEntryBase {
     type: 'contract',
 }
 
-export interface SchemaEntryHardcoded extends Omit<SchemaEntryBase, 'example'>{
+export interface SchemaEntryHardcoded extends Omit<SchemaEntryBase, 'example'> {
     type: 'hardcoded',
     value: any
 }
@@ -33,6 +33,7 @@ export type Schema = Record<string, SchemaEntryString | SchemaEntryNumber | Sche
 export interface TestConfig {
     network: NETWORK,
     blockTip: string,
+    blockHeight: number,
     options: StrategyOptions,
     addresses: string[]
 }
@@ -43,10 +44,18 @@ export interface StrategyOptions {
     [key: string]: any
 }
 
+export interface StrategyArgs {
+    network: StacksNetwork,
+    address: string,
+    blockTip: string,
+    blockHeight: number,
+    options: StrategyOptions
+}
+
 export interface Strategy {
     description: string,
     schema: Schema,
-    strategy: (network: StacksNetwork, address: string, blockTip: string, options: StrategyOptions) => Promise<number>,
+    strategy: (args: StrategyArgs) => Promise<number>,
     testConfig: TestConfig
 }
 
