@@ -69,5 +69,5 @@ interface AccountBalances {
 
 export const getAccountBalances = (network: StacksNetwork, address: string, untilBlock: number): Promise<AccountBalances> => {
     const u = `${network.coreApiUrl}/extended/v1/address/${address}/balances?until_block=${untilBlock}`;
-    return axios.get(u, baseConfig).then(r => cvToValue(hexToCV(r.data.balance)));
+    return axios.get(u, baseConfig).then(r => r.data);
 }
