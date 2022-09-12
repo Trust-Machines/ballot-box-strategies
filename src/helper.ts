@@ -1,16 +1,9 @@
-import {StacksMainnet, StacksTestnet} from '@stacks/network';
 import {NETWORK} from './types';
+import {NETWORKS} from './constants';
 import strategies, {runStrategy} from './index';
 
 export const getNetworkByName = (name: NETWORK) => {
-    switch (name) {
-        case 'mainnet':
-            return new StacksMainnet();
-        case 'testnet':
-            return new StacksTestnet();
-        default:
-            throw new Error('Unknown network!');
-    }
+    return NETWORKS[name];
 }
 
 export const testStrategy = async (s: string) => {
