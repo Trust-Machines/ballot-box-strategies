@@ -3,7 +3,7 @@ import {Schema, StrategyArgs, TestConfig} from '../types';
 
 export const description = 'SIP-009 NFT balance';
 
-export const strategyBaseOptions = {
+export const baseOptions = {
     noDecimalFormat: true
 }
 
