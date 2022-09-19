@@ -1,7 +1,11 @@
 import {getAccountBalances} from '../api';
 import {Schema, StrategyArgs, TestConfig} from '../types';
 
-export const description = 'SIP-009 token balance';
+export const description = 'SIP-009 NFT balance';
+
+export const strategyBaseOptions = {
+    noDecimalFormat: true
+}
 
 export const schema: Schema = {
     symbol: {
@@ -20,8 +24,9 @@ export const schema: Schema = {
         type: 'string',
         title: 'Token identifier',
         example: 'e.g. megapont-ape-club',
+        help: 'Asset name declared in the smart contract next to `define-non-fungible-token`',
         minLength: 1,
-        maxLength: 40
+        maxLength: 40,
     }
 }
 
