@@ -5,6 +5,7 @@ export type NETWORK = 'mainnet' | 'testnet';
 interface SchemaEntryBase {
     title: string,
     example: string,
+    help?: string
 }
 
 export interface SchemaEntryString extends SchemaEntryBase {
@@ -52,10 +53,15 @@ export interface StrategyArgs {
     options: StrategyOptions
 }
 
+export interface StrategyBaseOptions {
+    noDecimalFormat?: boolean
+}
+
 export interface Strategy {
     description: string,
     schema: Schema,
     strategy: (args: StrategyArgs) => Promise<number>,
+    baseOptions?: StrategyBaseOptions,
     testConfig: TestConfig
 }
 
