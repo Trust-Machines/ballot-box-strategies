@@ -24,7 +24,7 @@ export const schema: Schema = {
         type: 'string',
         title: 'Token identifier',
         example: 'e.g. megapont-ape-club',
-        help: 'Asset name declared in the smart contract next to `define-non-fungible-token`',
+        help: 'Asset name declared in the smart contract next to `define-non-fungible-token` directive.',
         minLength: 1,
         maxLength: 40,
     }
