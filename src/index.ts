@@ -7,9 +7,9 @@ import * as stxBalance from './stx-balance';
 export * from './types';
 
 const strategies: Record<string, Strategy> = {
+    'stx-balance': stxBalance,
     'sip-009-balance': sip009Balance,
-    'sip-010-get-balance': sip10GetBalance,
-    'stx-balance': stxBalance
+    'sip-010-get-balance': sip10GetBalance
 }
 
 export const runStrategy = (strategy: string, args: StrategyArgs) => {
